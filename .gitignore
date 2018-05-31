@@ -1,3 +1,6 @@
 
 *.xml
 .idea/vcs.xml
+.DS_Store
+RenPy/.DS_Store
+RenPy/game/.DS_Store
