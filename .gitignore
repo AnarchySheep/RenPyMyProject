@@ -28,3 +28,6 @@ RenPy/game/saves/auto-7-LT1.save
 RenPy/game/saves/auto-8-LT1.save
 RenPy/game/saves/auto-9-LT1.save
 RenPy/log.txt
+RenPy/.DS_Store
+RenPy/game/.DS_Store
+RenPy/game/cache/bytecode.rpyb
