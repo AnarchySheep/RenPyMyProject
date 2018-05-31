@@ -1,59 +1,43 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-<<<<<<< HEAD
-  File "game/script.rpy", line 98, in script call
-    image bg marioland = "marioland.jpg"
-  File "renpy/common/00console.rpy", line 765, in script call
-    python in _console:
-Exception: Sayer 'input' is not defined.
-=======
-  File "game/script.rpy", line 14, in script call
-    "Nothing too scary, mind you. But it will help with making this game as fun for you as possible!"
-  File "renpy/common/00console.rpy", line 765, in script call
-    python in _console:
-  File "game/script.rpy", line 392, in script
-    $ late = true
-  File "game/script.rpy", line 392, in <module>
-    $ late = true
-NameError: name 'true' is not defined
->>>>>>> 28fd57dcde5904560b17b821bb25dc88dd5d4745
+While processing the color property of style clockText:
+  File "renpy/common/00start.rpy", line 79, in _init_language
+    renpy.change_language(language)
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+Exception: Color string u'green' must be 3, 4, 6, or 8 hex digits long.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-<<<<<<< HEAD
-  File "game/script.rpy", line 98, in script call
-    image bg marioland = "marioland.jpg"
-  File "renpy/common/00console.rpy", line 765, in script call
-    python in _console:
-  File "<string>", line 1, in script
-  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/ast.py", line 624, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/ast.py", line 537, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'input' is not defined.
-=======
-  File "game/script.rpy", line 14, in script call
-    "Nothing too scary, mind you. But it will help with making this game as fun for you as possible!"
-  File "renpy/common/00console.rpy", line 765, in script call
-    python in _console:
-  File "game/script.rpy", line 392, in script
-    $ late = true
-  File "G:\Downloadings\renpy-6.99.14.3-sdk\renpy\ast.py", line 862, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "G:\Downloadings\renpy-6.99.14.3-sdk\renpy\python.py", line 1888, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/script.rpy", line 392, in <module>
-    $ late = true
-NameError: name 'true' is not defined
->>>>>>> 28fd57dcde5904560b17b821bb25dc88dd5d4745
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/bootstrap.py", line 306, in bootstrap
+    renpy.main.main()
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/main.py", line 513, in main
+    run(restart)
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/main.py", line 71, in run
+    renpy.translation.init_translation()
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/translation/__init__.py", line 535, in init_translation
+    renpy.store._init_language()  # @UndefinedVariable
+  File "renpy/common/00start.rpy", line 79, in _init_language
+    renpy.change_language(language)
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/translation/__init__.py", line 618, in change_language
+    i()
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+  File "style.pyx", line 788, in renpy.style.rebuild
+  File "style.pyx", line 781, in renpy.style.build_styles
+  File "style.pyx", line 702, in renpy.style.build_style
+  File "style.pyx", line 699, in renpy.style.build_style
+  File "gen/style_functions.pyx", line 744, in style_functions.color_property
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/color.py", line 156, in __new__
+    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
+Exception: Color string u'green' must be 3, 4, 6, or 8 hex digits long.
 
-Windows-8-6.2.9200
+Darwin-15.6.0-x86_64-i386-64bit
 Ren'Py 6.99.14.3.3347
 RenPy 1.0
-<<<<<<< HEAD
-Thu May 31 14:05:09 2018
-=======
-Wed May 30 08:07:53 2018
->>>>>>> 28fd57dcde5904560b17b821bb25dc88dd5d4745
+Thu May 31 17:39:57 2018

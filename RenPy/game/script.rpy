@@ -3,8 +3,9 @@ default pick_mistake_2 = False
 
 label start:
     show screen display_stats
+    show screen clock
 
-    #jump map
+    jump mario
 
     scene black
     with dissolve
@@ -768,15 +769,16 @@ label mario:
 
     show mario happy
     # These display lines of dialogue.
-    e "James senpai ur so kewl! [stats]"
-    jump map
+    e "James senpai ur so kewl!"
 
     show mario dab
+    $add(0,5)
     e "I wish I was as cool as you!"
     show mario punch
     "Bam!!" with vpunch
+    $add(1)
     show mario
-
+    $add(20,20)
     me "I'm gonna get you back for that"
     menu:
         "Beat him":
@@ -805,6 +807,7 @@ label mario:
 
 
 label finalend:
+
     me "End of story. Mario relationship  [mario_rel]"
     return
 
