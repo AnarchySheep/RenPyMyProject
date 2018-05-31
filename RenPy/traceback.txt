@@ -1,32 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 65, in script
-    peach "Oh hi there! [stats]"
-KeyError: u'stats'
+  File "game/script.rpy", line 98, in script call
+    image bg marioland = "marioland.jpg"
+  File "renpy/common/00console.rpy", line 765, in script call
+    python in _console:
+Exception: Sayer 'input' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 65, in script
-    peach "Oh hi there! [stats]"
-  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/ast.py", line 652, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
-  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/exports.py", line 1180, in say
-    who(what, *args, **kwargs)
-  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/character.py", line 1003, in __call__
-    what = what_pattern.replace("[what]", sub(what, translate=translate))
-  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/character.py", line 985, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/substitutions.py", line 242, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'stats'
+  File "game/script.rpy", line 98, in script call
+    image bg marioland = "marioland.jpg"
+  File "renpy/common/00console.rpy", line 765, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/ast.py", line 624, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "/Users/James/Desktop/renpy-6.99.14.3-sdk/renpy/ast.py", line 537, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'input' is not defined.
 
 Darwin-15.6.0-x86_64-i386-64bit
 Ren'Py 6.99.14.3.3347
 RenPy 1.0
-Tue May 29 18:29:32 2018
+Thu May 31 14:05:09 2018
