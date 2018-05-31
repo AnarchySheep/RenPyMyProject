@@ -31,3 +31,4 @@ RenPy/log.txt
 RenPy/.DS_Store
 RenPy/game/.DS_Store
 RenPy/game/cache/bytecode.rpyb
+*.rpyc
