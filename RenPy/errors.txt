@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 2: expected statement.
-    from screens import stats
-                             ^
+File "game/script.rpy", line 413: invalid syntax
+    option1 = "I guess I'll go pick again?" if pick_mistake jump gamestart else "I wonder which one's my guide?"
+                                                                ^
+    
 
 Ren'Py Version: Ren'Py 6.99.14.3.3347
-Tue May 29 18:27:46 2018
+Wed May 30 08:06:38 2018

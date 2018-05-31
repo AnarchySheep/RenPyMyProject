@@ -261,7 +261,7 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
-            textbutton _("Kill everyone") action ShowMenu('death')
+            textbutton _("Kill everyone") action Show('death')
 
 
 
@@ -593,97 +593,6 @@ style about_label_text:
 ## www.renpy.org/doc/html/screen_special.html#load
 
 # My custom screen
-
-
-
-screen death():
-    tag menu
-    text "death"
-    use game_menu(_("Cheats"), scroll="viewport"):
-
-        vbox:
-
-            hbox:
-                box_wrap True
-                vbox:
-                    style_prefix "radio"
-                    label _("Kill")
-                    python:
-                        def Kill():
-                            stats = "Second"
-                    textbutton _("Kill Mario") action [Hide("death"), Kill(), Jump("peach")]
-                    textbutton _("Kill Peach") action Preference("display", "fullscreen")
-                    textbutton _("Kill BowserJr") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Wifey")
-                    textbutton _("Marry Mario") action Preference("display", "window")
-                    textbutton _("Marry Peach") action Preference("display", "fullscreen")
-                    textbutton _("Marry BowserJr") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
-            null height (4 * gui.pref_spacing)
-
-            hbox:
-                style_prefix "slider"
-                box_wrap True
-
-                vbox:
-
-                    label _("Text Speed")
-
-                    bar value Preference("text speed")
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Music Volume")
-
-                        hbox:
-                            bar value Preference("music volume")
-
-                    if config.has_sound:
-
-                        label _("Sound Volume")
-
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Voice Volume")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
-
 
 
 screen save():
